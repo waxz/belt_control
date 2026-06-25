@@ -13,6 +13,8 @@ cfg.maxAccel = 3.0;
 cfg.nominalDt = 0.01;
 cfg.tFinal    = 10;
 
+cfg.parcelV0  = 1.0; % Initial parcel velocity
+
 %% Create Controller
 
 ctrl = ConveyorSyncController( ...
@@ -22,7 +24,7 @@ ctrl = ConveyorSyncController( ...
 %% Runtime
 
 parcelX = 0.0;
-parcelV = 0.0;
+parcelV = cfg.parcelV0;
 
 tClock = tic;
 tPrev  = 0;
@@ -30,7 +32,7 @@ tPrev  = 0;
 maxSamples = ceil(cfg.tFinal/cfg.nominalDt)*3 + 100;
 
 logger = createLogger(maxSamples);
-parcelVOut_last = 0;
+parcelVOut_last = parcelV;
 
 while true
 

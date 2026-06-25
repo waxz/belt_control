@@ -107,7 +107,7 @@ function [x,v,xRef,vRef,aRef] = ...
     else
 
         x = parcelX;
-        v = 0;
+        v = parcelV;
 
         xRef = NaN;
         vRef = NaN;
