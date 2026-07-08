@@ -22,3 +22,8 @@ Open MATLAB, navigate to this directory, and execute:
 main
 ```
 This will run the simulation and display real-time position/velocity tracking, acceleration profiles, control errors, and loop iteration timing.
+
+## python version
+```
+python main.py
+```
